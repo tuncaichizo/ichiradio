@@ -1,6 +1,9 @@
 # Ichi Radyo
 
-RAM yemeyen, işlemci yormayan, cyberpunk tasarımlı Windows internet radyosu.
+> **© 2026 [Kripto Ichizo](https://www.youtube.com/@kriptoichizo) — Tüm hakları saklıdır.**
+> Bu proje Kripto Ichizo'ya aittir. Kod yalnızca incelemek için açıktır; izinsiz kopyalanamaz, dağıtılamaz, değiştirilemez ve ticari amaçla kullanılamaz. Ayrıntılar: [LICENSE](LICENSE)
+
+**Kripto Ichizo** tarafından tasarlanıp geliştirildi. RAM yemeyen, işlemci yormayan, cyberpunk tasarımlı Windows internet radyosu.
 
 - Radyo çalarken yaklaşık **30–40 MB RAM** kullanır, boşta beklerken işlemci kullanımı neredeyse sıfırdır.
 - Electron ya da tarayıcı kullanmaz. Windows'la gelen .NET Framework ve Windows Media Player motoru üzerinde çalışır.
@@ -60,3 +63,24 @@ node harita-hazirla.js ne_50m_admin_0_countries.geojson harita.bin
 | `harita-hazirla.js` | Harita verisini sadeleştirip ikili dosyaya çevirir |
 | `harita.bin` | Gömülü ülke sınırları (113 KB) |
 | `ikon.ico` | Uygulama ikonu |
+| `LICENSE` | Lisans: tüm hakları saklıdır |
+
+## Geliştirici
+
+**Kripto Ichizo**, Ichi Radyo'nun fikir sahibi, tasarımcısı ve geliştiricisi.
+
+- YouTube: [@kriptoichizo](https://www.youtube.com/@kriptoichizo)
+- X: [@TuncaIchizo](https://x.com/TuncaIchizo)
+- GitHub: [tuncaichizo](https://github.com/tuncaichizo)
+
+Uygulamanın başlık çubuğunda **"by Kripto Ichizo"** imzası ve tepsi menüsünde kanal bağlantısı bulunur. Exe'nin dosya özelliklerinde de telif bilgisi yer alır.
+
+## Lisans
+
+**Tüm hakları saklıdır.** Bu depo herkese açık olsa da açık kaynak **değildir**. Kopyalama, dağıtma, değiştirme, başka projeye dahil etme, ticari kullanım ve imza/telif bildirimlerini kaldırma, Kripto Ichizo'nun yazılı izni olmadan yasaktır. Tam metin: [LICENSE](LICENSE)
+
+İzin talepleri için X üzerinden ulaşabilirsin: [@TuncaIchizo](https://x.com/TuncaIchizo)
+
+---
+
+<sub>Ichi Radyo © 2026 Kripto Ichizo · Harita verisi: Natural Earth (kamu malı) · İstasyon verisi: radio-browser.info</sub>

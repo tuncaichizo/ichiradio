@@ -1,0 +1,72 @@
+Ichi Radyo
+Copyright (c) 2026 Kripto Ichizo (GitHub: tuncaichizo). Tüm hakları saklıdır.
+All rights reserved.
+
+=============================================================================
+TÜRKÇE
+=============================================================================
+
+Bu depodaki tüm kaynak kodu, tasarım, ikon, arayüz ve belgeler ("Yazılım")
+Kripto Ichizo'nun mülkiyetindedir ve 5846 sayılı Fikir ve Sanat Eserleri
+Kanunu ile uluslararası telif hakkı mevzuatı kapsamında korunmaktadır.
+
+Yazılımın bu depoda herkese açık olarak yayınlanması, herhangi bir kullanım
+hakkı ya da lisans verildiği anlamına GELMEZ.
+
+Kripto Ichizo'nun önceden verilmiş YAZILI izni olmaksızın aşağıdakiler
+yasaktır:
+
+  1. Yazılımın tamamının veya bir kısmının kopyalanması, çoğaltılması;
+  2. Yazılımın veya türev çalışmalarının dağıtılması, yayınlanması,
+     paylaşılması, satılması ya da kiralanması;
+  3. Yazılımın değiştirilmesi, uyarlanması veya başka bir projeye dahil
+     edilmesi;
+  4. Yazılımın ticari amaçla kullanılması;
+  5. Yazılımdaki telif, sahiplik ve imza bildirimlerinin (ör. "by Kripto
+     Ichizo") kaldırılması veya değiştirilmesi;
+  6. Yazılımın başka bir kişi ya da kurum adına sunulması.
+
+Yalnızca kaynak kodunu GitHub üzerinde görüntülemeye izin verilir.
+
+İzin talepleri için: https://x.com/TuncaIchizo
+
+Yazılım "OLDUĞU GİBİ" sunulur; hiçbir garanti verilmez. Yazılımın
+kullanımından doğabilecek zararlardan Kripto Ichizo sorumlu tutulamaz.
+
+=============================================================================
+ENGLISH
+=============================================================================
+
+All source code, design, icons, user interface and documentation in this
+repository (the "Software") are the property of Kripto Ichizo and are
+protected by copyright law.
+
+Publishing the Software in this public repository does NOT grant any
+license or right of use.
+
+Without prior WRITTEN permission from Kripto Ichizo, you may not:
+
+  1. Copy or reproduce the Software, in whole or in part;
+  2. Distribute, publish, share, sell or rent the Software or any
+     derivative work;
+  3. Modify or adapt the Software, or incorporate it into another project;
+  4. Use the Software for commercial purposes;
+  5. Remove or alter any copyright, ownership or attribution notice
+     (e.g. "by Kripto Ichizo") in the Software;
+  6. Present the Software as the work of any other person or entity.
+
+Viewing the source code on GitHub is the only permitted use.
+
+Permission requests: https://x.com/TuncaIchizo
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. IN NO EVENT
+SHALL KRIPTO ICHIZO BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+ARISING FROM THE USE OF THE SOFTWARE.
+
+-----------------------------------------------------------------------------
+Üçüncü taraf verileri / Third-party data
+-----------------------------------------------------------------------------
+- harita.bin: Natural Earth (https://www.naturalearthdata.com) verisinden
+  üretilmiştir; Natural Earth verisi kamu malıdır (public domain).
+- İstasyon listesi çalışma anında radio-browser.info API'sinden alınır;
+  istasyon verileri bu depoda bulunmaz.

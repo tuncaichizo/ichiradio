@@ -1,3 +1,4 @@
+# Ichi Radyo — © 2026 Kripto Ichizo (github.com/tuncaichizo). Tüm hakları saklıdır. Bkz. LICENSE
 # Ichi Radyo derleme. Windows'la gelen .NET Framework C# derleyicisini kullanır; ek kurulum gerekmez.
 $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot

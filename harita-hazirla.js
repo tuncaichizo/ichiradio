@@ -1,3 +1,4 @@
+// Ichi Radyo — © 2026 Kripto Ichizo (github.com/tuncaichizo). Tüm hakları saklıdır. Bkz. LICENSE
 // Natural Earth 50m ülke sınırlarını sadeleştirip exe'ye gömülecek küçük ikili dosyaya (harita.bin) yazar.
 // Kullanım: node harita-hazirla.js ne_50m_admin_0_countries.geojson harita.bin
 // Biçim: u16 ülke sayısı; her ülke: string iso, string ad, u16 halka sayısı; her halka: u16 n, n × (i16 boylam*100, i16 enlem*100).

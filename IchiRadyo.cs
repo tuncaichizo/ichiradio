@@ -1,4 +1,11 @@
-// Ichi Radyo — hafif internet radyosu.
+// ============================================================================
+//  Ichi Radyo — hafif internet radyosu
+//  © 2026 Kripto Ichizo (github.com/tuncaichizo). Tüm hakları saklıdır.
+//  Bu dosya Kripto Ichizo'ya aittir. İzinsiz kopyalanamaz, dağıtılamaz,
+//  değiştirilemez ve ticari amaçla kullanılamaz. Ayrıntılar: LICENSE
+//  Kaynak: https://github.com/tuncaichizo/ichiradio
+//  YouTube: https://www.youtube.com/@kriptoichizo · X: https://x.com/TuncaIchizo
+// ============================================================================
 // Derleme: build.ps1 (Windows'un kendi .NET Framework csc'si, ek kurulum gerekmez; C# 5 sözdizimi).
 // Ses: Windows Media Player motoru (COM). İstasyonlar: radio-browser.info.
 using System;
@@ -16,16 +23,31 @@ using System.Web.Script.Serialization;
 using System.Reflection;
 using System.Windows.Forms;
 
-[assembly: AssemblyTitle("Ichi Radyo")]
-[assembly: AssemblyDescription("Hafif internet radyosu")]
+[assembly: AssemblyTitle("Ichi Radyo — by Kripto Ichizo")]
+[assembly: AssemblyDescription("Hafif internet radyosu · github.com/tuncaichizo/ichiradio")]
 [assembly: AssemblyProduct("Ichi Radyo")]
-[assembly: AssemblyCompany("Kripto Ichizo")]
-[assembly: AssemblyCopyright("Kripto Ichizo 2026")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyCompany("Kripto Ichizo (tuncaichizo)")]
+[assembly: AssemblyCopyright("© 2026 Kripto Ichizo. Tüm hakları saklıdır.")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
 
 namespace IchiRadyo
 {
+    // Sahiplik imzası: başlık çubuğunda, tepsi menüsünde, ağ isteklerinde kullanılır.
+    static class Imza
+    {
+        public const string Sahip = "Kripto Ichizo";
+        public const string Telif = "© 2026 Kripto Ichizo. Tüm hakları saklıdır.";
+        public const string Depo = "https://github.com/tuncaichizo/ichiradio";
+        public const string YouTube = "https://www.youtube.com/@kriptoichizo";
+        public const string UserAgent = "IchiRadyo/1.1 (by Kripto Ichizo; +https://github.com/tuncaichizo/ichiradio)";
+
+        public static void Ac(string url)
+        {
+            try { System.Diagnostics.Process.Start(url); } catch { }
+        }
+    }
+
     static class Native
     {
         [DllImport("user32.dll")] public static extern bool SetProcessDPIAware();
@@ -207,7 +229,7 @@ namespace IchiRadyo
                 try
                 {
                     var req = (HttpWebRequest)WebRequest.Create("https://" + s + ".api.radio-browser.info/json/" + path);
-                    req.UserAgent = "IchiRadyo/1.0";
+                    req.UserAgent = Imza.UserAgent;
                     req.Accept = "application/json";
                     req.Timeout = 8000;
                     req.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
@@ -501,6 +523,7 @@ namespace IchiRadyo
         RectangleF rClose { get { return new RectangleF(LW - 42, 0, 42, 38); } }
         RectangleF rTray { get { return new RectangleF(LW - 84, 0, 42, 38); } }
         RectangleF rMap { get { return new RectangleF(LW - 126, 0, 42, 38); } }
+        readonly RectangleF rSign = new RectangleF(126, 0, 108, 38);
         readonly RectangleF rNow = new RectangleF(12, 44, W - 24, 120);
         readonly RectangleF rBars = new RectangleF(W - 26 - 84, 122, 84, 32);
         readonly RectangleF rPlay = new RectangleF(18, 178, 50, 50);
@@ -516,7 +539,7 @@ namespace IchiRadyo
         {
             using (var g = Graphics.FromHwnd(IntPtr.Zero)) K = g.DpiX / 96f;
 
-            Text = "Ichi Radyo";
+            Text = "Ichi Radyo — by " + Imza.Sahip;
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             StartPosition = FormStartPosition.Manual;
@@ -992,6 +1015,8 @@ namespace IchiRadyo
 
             trayMenu.Items.Add(new ToolStripSeparator());
             trayMenu.Items.Add(Visible ? "Gizle" : "Göster", null, delegate { if (Visible) HideToTray(); else ShowFromTray(); });
+            trayMenu.Items.Add(new ToolStripSeparator());
+            trayMenu.Items.Add("Ichi Radyo · by " + Imza.Sahip + "  ↗", null, delegate { Imza.Ac(Imza.YouTube); });
             trayMenu.Items.Add("Çıkış", null, delegate { Close(); });
         }
 
@@ -1034,6 +1059,7 @@ namespace IchiRadyo
         {
             if (rClose.Contains(p)) return "close";
             if (rMap.Contains(p)) return "map";
+            if (rSign.Contains(p)) return "sign";
             if (rTray.Contains(p)) return "tray";
             if (rPlay.Contains(p)) return "play";
             if (rFav.Contains(p) && current != null) return "fav";
@@ -1097,6 +1123,7 @@ namespace IchiRadyo
                 case "tab1": SetTab(1); break;
                 case "tray": HideToTray(); break;
                 case "map": ToggleMap(); break;
+                case "sign": Imza.Ac(Imza.YouTube); break;
                 case "close": Close(); break;
             }
         }
@@ -1145,6 +1172,7 @@ namespace IchiRadyo
             Tema.Text(g, "ICHI", fTitle, Tema.Cyan, new RectangleF(16, 0, 60, 38));
             float iw = g.MeasureString("ICHI", fTitle, PointF.Empty, StringFormat.GenericTypographic).Width;
             Tema.Text(g, "// RADYO", fTitle, Tema.Mag, new RectangleF(16 + iw + 6, 0, 120, 38));
+            Tema.Text(g, "by " + Imza.Sahip, fMono, hover == "sign" ? Tema.Cyan : Tema.Dim, rSign);
             DrawTitleBtn(g, rTray, "tray");
             DrawTitleBtn(g, rMap, "map");
             DrawTitleBtn(g, rClose, "close");
