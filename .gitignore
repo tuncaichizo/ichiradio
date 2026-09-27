@@ -1,0 +1,3 @@
+# Derleme çıktısı: build.ps1 ile üretilir
+*.exe
+*.pdb
